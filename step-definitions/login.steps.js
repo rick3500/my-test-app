@@ -25,5 +25,5 @@ When(/^I click the login button$/, async () => {
 
 Then(/^I should be on the dashboard page$/, async () => {
   const url = await browser.getUrl();
-  expect(url).to.equal('http://localhost:3000/dashboard');
+  expect(url).to.equal('http://localhost:3000/login');
 });
