@@ -18,11 +18,18 @@ exports.config = {
     connectionRetryCount: 3,
     services: ['selenium-standalone'],
     framework: 'cucumber',
-    reporters: ['spec', [video, {
-        outputDir: './reports/videos',
-        saveAllVideos: true,
-        videoSlowdownMultiplier: 3
-      }]],
+    // reporters: ['spec', [video, {
+    //     outputDir: './reports',
+    //     saveAllVideos: true,
+    //     videoSlowdownMultiplier: 3
+    //   }],
+    //   ['allure', {
+    //     outputDir: './reports/allure-raw',
+    //     disableWebdriverStepsReporting: true,
+    //     disableWebdriverScreenshotsReporting: true,
+    //     useCucumberStepReporter: true
+    //   }],],
+    reporters: ['spec',[video, { outputDir: './reports', saveAllVideos: true, videoSlowDownMultiplier: 3}], ['allure', {outputDir: 'assure-results'}]],
     cucumberOpts: {
       requireModule: ['@babel/register'],
       require: ['./step-definitions/**/*.js'],
@@ -41,4 +48,3 @@ exports.config = {
       ignoreUndefinedDefinitions: false
     }
   }
-  
